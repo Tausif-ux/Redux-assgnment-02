@@ -3,14 +3,14 @@ const initialState = {
 };
 
 const reducer = (state=initialState, action) => {
-
+    console.log('reducer running');
     switch (action.type) {
         
         case 'ADD_PERSON':
             const newPerson = {
                 id: Math.random(), // not really unique but good enough here!
-                name: 'Max',
-                age: Math.floor( Math.random() * 40 )
+                name: action.personData.name,
+                age: action.personData.age
             };
             // const updatedPersons = [...state.persons];
             return {
